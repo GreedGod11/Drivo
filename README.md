@@ -1,6 +1,6 @@
 DRIVO project 
 
-objective :
+objectif :
 
 * Application allowing you to fill a basket with products
 available online, indicating the prices of the different stores
