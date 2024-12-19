@@ -1,13 +1,13 @@
-projet DRIVO 
+DRIVO project 
 
-objectif :
+objective :
 
-* Application permettant de remplir un panier à partir de produits
-disponibles en ligne, en indiquant les prix des différents magasins
-proches de la localisation de l'utilisateur.
+* Application allowing you to fill a basket with products
+available online, indicating the prices of the different stores
+close to the user's location.
 
-*  Comparaison des prix par article et possibilité d'optimiser les achats en
-divisant la commande sur plusieurs enseignes.
+* Price comparison per item and possibility of optimizing purchases by
+dividing the order across several brands.
 
-* Éventuelles fonctionnalités futures avec l'intégration de l'IA (optimisation
-des trajets, coût d'essence, recommandations d'enseignes).
+* Possible future features with AI integration (optimization
+trips, cost of gasoline, brand recommendations).
