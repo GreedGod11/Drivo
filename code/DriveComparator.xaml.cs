@@ -385,11 +385,23 @@ namespace test_drivo
                
                 try
                 {
-                    // Convert file path to URI format
-                    selectedProduct.ImagePath = new Uri(selectedProduct.ImagePath).AbsoluteUri;
+               // Go up two levels to reach the project root
+                    string projectRoot = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
+                    // Combine with the correct image path
+                    string imagePath = System.IO.Path.Combine(projectRoot, "Images", "products", System.IO.Path.GetFileName(selectedProduct.ImagePath));
+
+                    if (File.Exists(imagePath))
+                    {
+                        imgProduct.Source = new BitmapImage(new Uri(imagePath, UriKind.Absolute));
+                    }
+
+                    else
+                    {
+                        // Use a placeholder if the image is missing
+                        string placeholderPath = System.IO.Path.Combine(projectRoot, "Images", "placeholder.png");
+                        imgProduct.Source = new BitmapImage(new Uri(placeholderPath, UriKind.Absolute));
+                    }
                     ProductDetailsTextBlock.Text = selectedProduct.desc;
-                    
-                    imgProduct.Source = new BitmapImage(new Uri(selectedProduct.ImagePath));
 
                     // ✅ Insert or update product in the cart
                     string insertOrUpdateSql = @"
